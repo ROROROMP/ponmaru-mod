@@ -3,15 +3,15 @@
 	"id": "ponmaru-mod",
 	"version": "${version}",
 	"name": "Ponmaru Mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "JAVA練習用にMODを作成しています",
 	"authors": [
-		"Me!"
+		"ROMP"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://x.com/ROROROMP/",
+		"sources": "https://github.com/ROROROMP/ponmaru-mod"
 	},
-	"license": "CC0-1.0",
+	"license": "MIT",
 	"icon": "assets/ponmaru-mod/icon.png",
 	"environment": "*",
 	"entrypoints": {
