@@ -1,37 +1,37 @@
 {
-	"schemaVersion": 1,
-	"id": "ponmaru-mod",
-	"version": "${version}",
-	"name": "Ponmaru Mod",
-	"description": "JAVA練習用にMODを作成しています",
-	"authors": [
-		"ROMP"
-	],
-	"contact": {
-		"homepage": "https://x.com/ROROROMP/",
-		"sources": "https://github.com/ROROROMP/ponmaru-mod"
-	},
-	"license": "MIT",
-	"icon": "assets/ponmaru-mod/icon.png",
-	"environment": "*",
-	"entrypoints": {
-		"main": [
-			"com.romp.PonmaruMod"
-		],
-		"fabric-datagen": [
-			"com.romp.PonmaruModDataGenerator"
-		]
-	},
-	"mixins": [
-		"ponmaru-mod.mixins.json"
-	],
-	"depends": {
-		"fabricloader": ">=0.17.3",
-		"minecraft": "~1.21.10",
-		"java": ">=21",
-		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
-	}
+  "schemaVersion": 1,
+  "id": "ponmaru_mod",
+  "version": "${version}",
+  "name": "Ponmaru Mod",
+  "description": "JAVA練習用にMODを作成しています",
+  "authors": [
+    "ROMP"
+  ],
+  "contact": {
+    "homepage": "https://x.com/ROROROMP/",
+    "sources": "https://github.com/ROROROMP/ponmaru-mod"
+  },
+  "license": "MIT",
+  "icon": "assets/ponmaru_mod/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.romp.PonmaruMod"
+    ],
+    "fabric-datagen": [
+      "com.romp.PonmaruModDataGenerator"
+    ]
+  },
+  "mixins": [
+    "ponmaru-mod.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.17.3",
+    "minecraft": "~1.21.10",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
 }
