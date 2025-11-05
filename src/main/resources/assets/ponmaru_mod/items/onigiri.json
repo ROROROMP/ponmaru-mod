@@ -1,0 +1,6 @@
+{
+  "model": {
+    "type" : "minecraft:model",
+    "model": "ponmaru_mod:item/onigiri"
+  }
+}
