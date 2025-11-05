@@ -1,4 +1,11 @@
 package com.romp;
 
-public class PonmaruModClient {
+
+import net.fabricmc.api.ClientModInitializer;
+
+
+public class PonmaruModClient implements ClientModInitializer {
+    @Override
+    public void onInitializeClient() {
+    }
 }

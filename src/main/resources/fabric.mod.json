@@ -18,6 +18,9 @@
     "main": [
       "com.romp.PonmaruMod"
     ],
+    "client": [
+      "com.romp.PonmaruModClient"
+    ],
     "fabric-datagen": [
       "com.romp.PonmaruModDataGenerator"
     ]
