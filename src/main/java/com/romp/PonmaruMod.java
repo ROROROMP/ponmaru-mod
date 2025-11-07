@@ -13,7 +13,6 @@ public class PonmaruMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        ModItems.registerModItems(); // ← これを呼ぶことで、ModItemsクラスをロード
-
+        ModItems.initialize(); // ← これを呼ぶことで、ModItemsクラスをロード
     }
 }
