@@ -16,9 +16,6 @@ public class PonmaruMod implements ModInitializer {
     public void onInitialize() {
         ModItems.initialize(); // ModItemsクラスをロード
         ModItemGroups.registerItemGroups(); // ModItemGroupsクラスをロード
-
-
-
     }
 
 

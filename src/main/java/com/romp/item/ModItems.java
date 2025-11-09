@@ -1,7 +1,6 @@
 package com.romp.item;
 
 import com.romp.PonmaruMod;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
@@ -39,6 +38,7 @@ public class ModItems {
 
 
     public static void initialize() {
+
         //　ログに出力して、Modが正しく初期化されたことを確認する
         PonmaruMod.LOGGER.info("ModItemsクラス：アイテムの登録 " + PonmaruMod.MOD_ID);
 
