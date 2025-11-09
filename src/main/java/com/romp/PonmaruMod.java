@@ -14,8 +14,11 @@ public class PonmaruMod implements ModInitializer {
 
     @Override
     public void onInitialize() {
-        //ModItemGroups.registerItemGroups();
-        ModItems.initialize(); // ← これを呼ぶことで、ModItemsクラスをロード
+        ModItems.initialize(); // ModItemsクラスをロード
+        ModItemGroups.registerItemGroups(); // ModItemGroupsクラスをロード
+
+
+
     }
 
 
