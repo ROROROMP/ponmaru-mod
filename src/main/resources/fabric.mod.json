@@ -11,7 +11,7 @@
     "homepage": "https://x.com/ROROROMP/",
     "sources": "https://github.com/ROROROMP/ponmaru-mod"
   },
-  "license": "MIT",
+  "license": "MIT License",
   "icon": "assets/ponmaru_mod/icon.png",
   "environment": "*",
   "entrypoints": {
