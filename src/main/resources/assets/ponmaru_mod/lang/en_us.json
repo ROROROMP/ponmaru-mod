@@ -1,5 +1,9 @@
 {
   "item_group.ponmaru_mod": "Ponmaru Items",
 
-  "item.ponmaru_mod.onigiri": "Onigiri"
+  "item.ponmaru_mod.onigiri": "Onigiri",
+  "item.ponmaru_mod.onigiri_shio": "Shionigiri",
+  "item.ponmaru_mod.onigiri_ume": "Umenigiri",
+  "item.ponmaru_mod.kizushi": "Kizushi",
+  "item.ponmaru_mod.sansyokudango": "Sansyokudango"
 }

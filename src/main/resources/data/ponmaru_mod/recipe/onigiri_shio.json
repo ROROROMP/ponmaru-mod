@@ -1,0 +1,14 @@
+
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds",
+    "minecraft:wheat_seeds"
+  ],
+  "result": {
+    "id": "ponmaru_mod:onigiri_shio",
+    "count": 1
+  }
+}
