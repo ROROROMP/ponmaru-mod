@@ -13,12 +13,11 @@ import java.util.function.Function;
 public class ModItems {
 
     // アイテムを追加
-    //public static final Item ONIGIRI = register("onigiri", Item::new, new Item.Settings());
-
-    // 今回食料として追加しなおしたところ
-    // Itemに対して、FoodComponentを設定する
     public static final Item ONIGIRI = register("onigiri", Item::new, new Item.Settings().food(ModFoodComponents.ONIGIRI));
-
+    public static final Item ONIGIRI_SHIO = register("onigiri_shio", Item::new, new Item.Settings().food(ModFoodComponents.ONIGIRI_SHIO));
+    public static final Item ONIGIRI_UME = register("onigiri_ume", Item::new, new Item.Settings().food(ModFoodComponents.ONIGIRI_UME));
+    public static final Item KIZUSHI = register("kizushi", Item::new, new Item.Settings().food(ModFoodComponents.KIZUSHI));
+    public static final Item SANSYOKUDANGO = register("sansyokudango", Item::new, new Item.Settings().food(ModFoodComponents.SANSYOKUDANGO));
 
     // Item オブジェクトを返す register メソッド
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {

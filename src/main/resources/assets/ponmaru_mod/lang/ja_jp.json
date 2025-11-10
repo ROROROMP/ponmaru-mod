@@ -2,5 +2,8 @@
   "item_group.ponmaru_mod": "ポン丸MOD",
 
   "item.ponmaru_mod.onigiri": "おにぎり",
-  "tooltip.ponmaru_mod.onigiri": "丁寧に炊き上げた米と瀬戸内で取れた海苔"
+  "item.ponmaru_mod.onigiri_shio": "塩にぎり",
+  "item.ponmaru_mod.onigiri_ume": "梅にぎり",
+  "item.ponmaru_mod.kizushi": "きずし",
+  "item.ponmaru_mod.sansyokudango": "三色だんご"
 }

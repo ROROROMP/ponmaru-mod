@@ -20,7 +20,7 @@ public class ModItemGroups {
 
     // カスタムアイテムグループを作成
     public static final ItemGroup PONMARU_GROUP = FabricItemGroup.builder()
-            .icon(() -> new ItemStack(ModItems.ONIGIRI))
+            .icon(() -> new ItemStack(ModItems.ONIGIRI_UME))
             .displayName(Text.translatable("item_group.ponmaru_mod"))
             .build();
 
@@ -36,7 +36,11 @@ public class ModItemGroups {
         // カスタムアイテムグループにアイテムを追加
         ItemGroupEvents.modifyEntriesEvent(PONMARU_GROUP_KEY).
                 register(itemGroup -> {
+                    itemGroup.add(ModItems.ONIGIRI_SHIO);
                     itemGroup.add(ModItems.ONIGIRI);
+                    itemGroup.add(ModItems.ONIGIRI_UME);
+                    itemGroup.add(ModItems.KIZUSHI);
+                    itemGroup.add(ModItems.SANSYOKUDANGO);
                 });
 
     }
