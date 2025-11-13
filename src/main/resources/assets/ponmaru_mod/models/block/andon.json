@@ -1,11 +1,11 @@
 {
   "format_version": "1.9.0",
   "credit": "Made with Blockbench",
-  "parent": "block/thin_block",
+  "parent": "minecraft:block/oak_planks",
   "render_type": "cutout",
   "texture_size": [32, 32],
   "textures": {
-    "particle": "minecraft:block/ochre_froglight",
+    "particle": "minecraft:block/oak_planks",
     "light": "minecraft:block/ochre_froglight_top",
     "waku": "minecraft:block/oak_planks"
   },

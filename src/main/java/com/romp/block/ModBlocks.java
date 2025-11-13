@@ -17,11 +17,12 @@ import java.util.function.Function;
 
 public class ModBlocks {
 
+    // ブロックを追加
     public static final Block ANDON = register(
             "andon",
             settings -> new Block(settings
                     .strength(1.5f)           // 硬さ
-                    .luminance(state -> 15)   // 光源レベル 0～15
+                    .luminance(state -> 10)   // 光源レベル 0～15
                     .nonOpaque() // 透過部分を描画
             ),
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD),
@@ -29,18 +30,19 @@ public class ModBlocks {
     );
 
 
+    // Blockオブジェクトを返す register メソッド
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
-        // ブロックの RegistryKey（登録キー）を作成
+
+        // BlockのRegistryKey（登録キー）を作成
         RegistryKey<Block> blockKey = keyOfBlock(name);
-        // ブロックのインスタンスを作成
+
+        // Blockのインスタンスを作成
         Block block = blockFactory.apply(settings.registryKey(blockKey));
 
-        // 場合によっては、アイテムを登録しないこともある。
-        // 例: `minecraft:moving_piston` や `minecraft:end_gateway` のような
-        //     テクニカルブロックはアイテムを持たない。
+        // Blockをアイテム登録するかしないかを設定。（作動中ピストンみたいにアイテム持たないブロックはfalseにする）
         if (shouldRegisterItem) {
-            // アイテムはブロックとは別の Registry に登録する必要があるが、
-            // 登録 ID（名前）は同じでよい。
+
+            // ここに来るのは "shouldRegisterItem" が true のときだけ
             RegistryKey<Item> itemKey = keyOfItem(name);
 
             // ブロックに対応するアイテムを作成
