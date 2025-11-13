@@ -19,16 +19,16 @@ public class ModItems {
     public static final Item KIZUSHI = register("kizushi", Item::new, new Item.Settings().food(ModFoodComponents.KIZUSHI));
     public static final Item SANSYOKUDANGO = register("sansyokudango", Item::new, new Item.Settings().food(ModFoodComponents.SANSYOKUDANGO));
 
-    // Item オブジェクトを返す register メソッド
+    // Itemオブジェクトを返す register メソッド
     public static Item register(String name, Function<Item.Settings, Item> itemFactory, Item.Settings settings) {
 
-        // アイテムキーを作成
+        // ItemのRegistryKey（登録キー）を作成
         RegistryKey<Item> itemKey = RegistryKey.of(RegistryKeys.ITEM, Identifier.of(PonmaruMod.MOD_ID, name));
 
-        // アイテムインスタンスを作成
+        // Itemのインスタンスを作成
         Item item = itemFactory.apply(settings.registryKey(itemKey));
 
-        // アイテムを登録
+        // Itemを登録
         Registry.register(Registries.ITEM, itemKey, item);
         return item;
 

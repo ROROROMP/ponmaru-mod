@@ -1,6 +1,7 @@
 package com.romp.item;
 
 import com.romp.PonmaruMod;
+import com.romp.block.ModBlocks;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.item.ItemGroup;
@@ -41,6 +42,8 @@ public class ModItemGroups {
                     itemGroup.add(ModItems.ONIGIRI_UME);
                     itemGroup.add(ModItems.KIZUSHI);
                     itemGroup.add(ModItems.SANSYOKUDANGO);
+
+                    itemGroup.add(ModBlocks.ANDON);
                 });
 
     }
