@@ -29,6 +29,17 @@ public class ModBlocks {
             true
     );
 
+    public static final Block OAK_LANTERN = register(
+            "oak_lantern",
+            settings -> new Block(settings
+                    .strength(1.5f)           // 硬さ
+                    .luminance(state -> 10)   // 光源レベル 0～15
+                    .nonOpaque() // 透過部分を描画
+            ),
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD),
+            true
+    );
+
 
     // Blockオブジェクトを返す register メソッド
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
