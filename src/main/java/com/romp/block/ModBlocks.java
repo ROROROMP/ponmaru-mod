@@ -5,7 +5,6 @@ import com.romp.PonmaruMod;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 
-import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -40,24 +39,6 @@ public class ModBlocks {
             AbstractBlock.Settings.create(),
             true
     );
-
-    public static final Block BONSAI_SAKURA = register(
-            "bonsai_sakura",
-            settings -> new BonsaiBlock(settings.strength(0.5f).luminance(state -> 5).nonOpaque()
-            ),
-            AbstractBlock.Settings.create(),
-            false
-    );
-
-    public static final Block BONSAI_MATSU = register(
-            "bonsai_matsu",
-            settings -> new BonsaiBlock(settings.strength(0.5f).luminance(state -> 5).nonOpaque()
-            ),
-            AbstractBlock.Settings.create(),
-            false
-    );
-
-
 
 
     // Blockオブジェクトを返す register メソッド

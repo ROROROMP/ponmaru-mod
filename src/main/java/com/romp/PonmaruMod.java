@@ -1,7 +1,6 @@
 package com.romp;
 
 import com.romp.block.ModBlocks;
-import com.romp.blockentity.ModBlockEntities;
 import com.romp.item.ModItemGroups;
 import com.romp.item.ModItems;
 import net.fabricmc.api.ModInitializer;
@@ -20,7 +19,6 @@ public class PonmaruMod implements ModInitializer {
         ModItems.initialize(); // ModItemsクラスをロード
         ModBlocks.initialize(); // ModBlocksクラスをロード
         ModItemGroups.registerItemGroups(); // ModItemGroupsクラスをロード
-        ModBlockEntities.register(); // ModBlockEntitiesクラスをロード
     }
 
 
