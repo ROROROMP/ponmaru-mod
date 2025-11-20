@@ -43,8 +43,8 @@ public class ModItemGroups {
                     itemGroup.add(ModItems.KIZUSHI);
                     itemGroup.add(ModItems.SANSYOKUDANGO);
 
-                    itemGroup.add(ModBlocks.ANDON);
                     itemGroup.add(ModBlocks.OAK_LANTERN);
+                    itemGroup.add(ModBlocks.BONSAI_POT);
                 });
 
     }

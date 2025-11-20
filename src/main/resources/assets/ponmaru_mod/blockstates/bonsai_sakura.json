@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "empty=true": {
+      "model": "ponmaru_mod:block/bonsai_pot"
+    },
+    "empty=false,sapling=cherry": {
+      "model": "ponmaru_mod:block/bonsai_sakura"
+    },
+    "empty=false,sapling=spruce": {
+      "model": "ponmaru_mod:block/bonsai_matsu"
+    }
+  }
+}

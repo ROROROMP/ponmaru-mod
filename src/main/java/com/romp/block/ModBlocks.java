@@ -1,8 +1,11 @@
 package com.romp.block;
 
 import com.romp.PonmaruMod;
+
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
+
+import net.minecraft.block.Blocks;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -15,13 +18,14 @@ import net.minecraft.util.Identifier;
 import java.util.function.Function;
 
 
+
 public class ModBlocks {
 
     // ブロックを追加
-    public static final Block ANDON = register(
-            "andon",
+    public static final Block OAK_LANTERN = register(
+            "oak_lantern",
             settings -> new Block(settings
-                    .strength(1.5f)           // 硬さ
+                    .strength(0.5f)           // 硬さ
                     .luminance(state -> 10)   // 光源レベル 0～15
                     .nonOpaque() // 透過部分を描画
             ),
@@ -29,16 +33,31 @@ public class ModBlocks {
             true
     );
 
-    public static final Block OAK_LANTERN = register(
-            "oak_lantern",
-            settings -> new Block(settings
-                    .strength(1.5f)           // 硬さ
-                    .luminance(state -> 10)   // 光源レベル 0～15
-                    .nonOpaque() // 透過部分を描画
+    public static final Block BONSAI_POT = register(
+            "bonsai_pot",
+            settings -> new BonsaiBlock(settings.strength(0.5f).luminance(state -> 5).nonOpaque()
             ),
-            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD),
+            AbstractBlock.Settings.create(),
             true
     );
+
+    public static final Block BONSAI_SAKURA = register(
+            "bonsai_sakura",
+            settings -> new BonsaiBlock(settings.strength(0.5f).luminance(state -> 5).nonOpaque()
+            ),
+            AbstractBlock.Settings.create(),
+            false
+    );
+
+    public static final Block BONSAI_MATSU = register(
+            "bonsai_matsu",
+            settings -> new BonsaiBlock(settings.strength(0.5f).luminance(state -> 5).nonOpaque()
+            ),
+            AbstractBlock.Settings.create(),
+            false
+    );
+
+
 
 
     // Blockオブジェクトを返す register メソッド
