@@ -2,11 +2,11 @@
   "item_group.ponmaru_mod": "Ponmaru Items",
 
   "item.ponmaru_mod.onigiri": "Onigiri",
-  "item.ponmaru_mod.onigiri_shio": "Shionigiri",
-  "item.ponmaru_mod.onigiri_ume": "Umenigiri",
+  "item.ponmaru_mod.onigiri_shio": "Onigiri Shio",
+  "item.ponmaru_mod.onigiri_ume": "Onigiri Ume",
   "item.ponmaru_mod.kizushi": "Kizushi",
   "item.ponmaru_mod.sansyokudango": "Sansyokudango",
 
-  "block.ponmaru_mod.andon": "Andon",
-  "block.ponmaru_mod.oak_lantern": "Oak Lantern"
+  "block.ponmaru_mod.oak_lantern": "Oak Lantern",
+  "block.ponmaru_mod.bonsai_pot": "Bonsai Pot"
 }

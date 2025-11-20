@@ -13,6 +13,7 @@ public class PonmaruMod implements ModInitializer {
     // ログを出力し、MODが動いてるか確認する
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
+
     @Override
     public void onInitialize() {
         ModItems.initialize(); // ModItemsクラスをロード
