@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "ponmaru_mod:block/zaisu", "y": 180 },
+    "facing=east": { "model": "ponmaru_mod:block/zaisu", "y": 270 },
+    "facing=south": { "model": "ponmaru_mod:block/zaisu" },
+    "facing=west": { "model": "ponmaru_mod:block/zaisu", "y": 90 }
+  }
+}

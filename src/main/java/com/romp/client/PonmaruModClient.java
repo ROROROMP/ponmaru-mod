@@ -1,4 +1,4 @@
-package com.romp;
+package com.romp.client;
 
 import com.romp.block.ModBlocks;
 import net.fabricmc.api.ClientModInitializer;
@@ -7,8 +7,6 @@ import net.minecraft.client.render.BlockRenderLayer;
 
 
 public class PonmaruModClient implements ClientModInitializer {
-
-
 
 
     @Override

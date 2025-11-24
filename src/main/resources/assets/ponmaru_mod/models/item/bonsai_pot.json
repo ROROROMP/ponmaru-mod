@@ -1,6 +1,6 @@
 {
   "parent": "ponmaru_mod:block/bonsai_pot",
   "textures": {
-    "layer0": "ponmaru_mod:item/bonsai_pot"
+    "layer0": "ponmaru_mod:block/bonsai_pot"
   }
 }

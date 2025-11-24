@@ -12,6 +12,7 @@ import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.util.ActionResult;
+import net.minecraft.util.Hand;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -29,7 +30,8 @@ public class BonsaiBlock extends Block {
         // デフォルト状態を EMPTY=true に設定
         this.setDefaultState(this.getStateManager().getDefaultState()
                 .with(EMPTY, true)
-                .with(SAPLING, SaplingType.CHERRY)); // デフォルトはとりあえず CHERRY
+                //.with(SAPLING, SaplingType.CHERRY) // デフォルトはとりあえず CHERRY
+        );
     }
 
 
@@ -42,13 +44,13 @@ public class BonsaiBlock extends Block {
 
     // onUse メソッドをオーバーライドして、右クリック処理を記述します。
     @Override
-    protected ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
+    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
 
         // クライアント側なら何もしない(クライアント側ではパーティクルや音など描画処理のみ)
         if (world.isClient()) return ActionResult.SUCCESS;
 
         // プレイヤーのメインハンドにあるアイテムスタックを取得する
-        ItemStack stack = player.getEquippedStack(EquipmentSlot.MAINHAND);
+        ItemStack stack = player.getStackInHand(Hand.MAIN_HAND);
 
         // ここに右クリック時の処理を書く
         // EMPTY が true の場合 → 植える
@@ -63,6 +65,10 @@ public class BonsaiBlock extends Block {
                 case CHERRY, SPRUCE -> {
                     world.setBlockState(pos, state.with(EMPTY, false).with(SAPLING, sapling));
                 }
+            }
+
+            if (!player.isCreative()) {
+                stack.decrement(1); // 苗木を1個消費
             }
 
         }

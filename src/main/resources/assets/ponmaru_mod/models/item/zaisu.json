@@ -1,0 +1,6 @@
+{
+  "parent": "ponmaru_mod:block/zaisu",
+  "textures": {
+    "layer0": "ponmaru_mod:block/zaisu"
+  }
+}

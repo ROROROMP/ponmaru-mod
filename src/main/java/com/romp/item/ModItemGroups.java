@@ -45,6 +45,7 @@ public class ModItemGroups {
 
                     itemGroup.add(ModBlocks.OAK_LANTERN);
                     itemGroup.add(ModBlocks.BONSAI_POT);
+                    itemGroup.add(ModBlocks.ZAISU);
                 });
 
     }
