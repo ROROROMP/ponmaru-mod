@@ -13,6 +13,7 @@ public class PonmaruModClient implements ClientModInitializer {
     public void onInitializeClient() {
         // ブロックの一部を透明にする
         BlockRenderLayerMap.putBlock(ModBlocks.BONSAI_POT, BlockRenderLayer.CUTOUT);
+        BlockRenderLayerMap.putBlock(ModBlocks.DARK_OAK_LANTERN, BlockRenderLayer.CUTOUT);
 
 
     }

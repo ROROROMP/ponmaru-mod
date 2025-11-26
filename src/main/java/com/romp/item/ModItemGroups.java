@@ -44,6 +44,7 @@ public class ModItemGroups {
                     itemGroup.add(ModItems.SANSYOKUDANGO);
 
                     itemGroup.add(ModBlocks.OAK_LANTERN);
+                    itemGroup.add(ModBlocks.DARK_OAK_LANTERN);
                     itemGroup.add(ModBlocks.BONSAI_POT);
                     itemGroup.add(ModBlocks.ZAISU);
                 });
