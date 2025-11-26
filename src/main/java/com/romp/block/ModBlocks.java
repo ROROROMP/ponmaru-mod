@@ -23,26 +23,22 @@ public class ModBlocks {
     // ブロックを追加
     public static final Block OAK_LANTERN = register("oak_lantern",
             settings -> new Block(settings.strength(0.5f).luminance(state -> 12).nonOpaque()),
-            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD),
-            true
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD), true
     );
 
     public static final Block DARK_OAK_LANTERN = register("dark_oak_lantern",
             settings -> new AbstractFacingBlock(settings.strength(0.5f).luminance(state -> 12).nonOpaque()),
-            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD),
-            true
+            AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD), true
     );
 
     public static final Block BONSAI_POT = register("bonsai_pot",
             settings -> new BonsaiBlock(settings.strength(0.5f).luminance(state -> 8).nonOpaque()),
-            AbstractBlock.Settings.create(),
-            true
+            AbstractBlock.Settings.create(), true
     );
 
     public static final Block ZAISU = register("zaisu",
             settings -> new ZaisuBlock(settings.strength(1.0f).nonOpaque()),
-            AbstractBlock.Settings.create(),
-            true
+            AbstractBlock.Settings.create(), true
     );
 
 
