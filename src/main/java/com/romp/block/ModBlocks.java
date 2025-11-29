@@ -4,7 +4,6 @@ import com.romp.PonmaruMod;
 
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
-
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -22,12 +21,18 @@ public class ModBlocks {
 
     // ブロックを追加
     public static final Block OAK_LANTERN = register("oak_lantern",
-            settings -> new Block(settings.strength(0.5f).luminance(state -> 12).nonOpaque()),
+            settings -> new Block(settings
+                    .strength(0.5f)
+                    .luminance(state -> 10)
+                    .nonOpaque()),
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD), true
     );
 
     public static final Block DARK_OAK_LANTERN = register("dark_oak_lantern",
-            settings -> new AbstractFacingBlock(settings.strength(0.5f).luminance(state -> 12).nonOpaque()),
+            settings -> new LanternBlock(settings
+                    .strength(0.5f)
+                    .luminance(state -> 12)
+                    .nonOpaque()),
             AbstractBlock.Settings.create().sounds(BlockSoundGroup.WOOD), true
     );
 
