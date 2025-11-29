@@ -54,6 +54,7 @@ public class ZaisuBlock extends Block {
     }
 
 
+
     // ブロッククラスで onUse をオーバーライド
 //    @Override
 //    public  ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, BlockHitResult hit) {
