@@ -10,11 +10,13 @@ import net.minecraft.util.math.Direction;
 import java.util.Objects;
 
 // 向きの処理をまとめた抽象クラス
+// BlockWithEntityベースの "向き付き抽象ブロック"
 public class AbstractFacingBlock extends Block {
 
     // コンストラクタ
     public AbstractFacingBlock(Settings settings) {
         super(settings);
+
         //ブロックの "向き" を初期化
         setDefaultState(getDefaultState()
                 .with(Properties.FACING, Direction.NORTH)
@@ -33,8 +35,8 @@ public class AbstractFacingBlock extends Block {
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         return Objects.requireNonNull(super.getPlacementState(ctx))
                 .with(Properties.FACING, ctx.getHorizontalPlayerFacing().getOpposite());
-
     }
+
 
 
 }

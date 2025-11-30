@@ -1,8 +1,13 @@
 {
   "variants": {
-    "facing=north": { "model": "ponmaru_mod:block/dark_oak_lantern", "y": 180 },
-    "facing=east": { "model": "ponmaru_mod:block/dark_oak_lantern", "y": 270 },
-    "facing=south": { "model": "ponmaru_mod:block/dark_oak_lantern" },
-    "facing=west": { "model": "ponmaru_mod:block/dark_oak_lantern", "y": 90 }
+    "facing=north,on_slab=false": { "model": "ponmaru_mod:block/dark_oak_lantern", "y": 180 },
+    "facing=east,on_slab=false": { "model": "ponmaru_mod:block/dark_oak_lantern", "y": 270 },
+    "facing=south,on_slab=false":  { "model": "ponmaru_mod:block/dark_oak_lantern"},
+    "facing=west,on_slab=false":  { "model": "ponmaru_mod:block/dark_oak_lantern", "y": 90 },
+
+    "facing=north,on_slab=true":  { "model": "ponmaru_mod:block/dark_oak_lantern2", "y": 180 },
+    "facing=east,on_slab=true":  { "model": "ponmaru_mod:block/dark_oak_lantern2", "y": 270 },
+    "facing=south,on_slab=true":   { "model": "ponmaru_mod:block/dark_oak_lantern2"},
+    "facing=west,on_slab=true":   { "model": "ponmaru_mod:block/dark_oak_lantern2", "y": 90 }
   }
 }

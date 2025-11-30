@@ -1,7 +1,6 @@
 {
   "variants": {
-    "": {
-      "model": "ponmaru_mod:block/oak_lantern"
-    }
+    "on_slab=false": { "model": "ponmaru_mod:block/oak_lantern" },
+    "on_slab=true":  { "model": "ponmaru_mod:block/oak_lantern2" }
   }
 }

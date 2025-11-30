@@ -1,8 +1,6 @@
 package com.romp;
 
 import com.romp.block.ModBlocks;
-
-
 import com.romp.item.ModItemGroups;
 import com.romp.item.ModItems;
 import net.fabricmc.api.ModInitializer;

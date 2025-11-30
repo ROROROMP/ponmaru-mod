@@ -1,10 +1,12 @@
 package com.romp.block;
 
+import com.romp.api.ISlabAwareBlock;
 import com.romp.item.SaplingType;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.state.StateManager;
@@ -16,9 +18,10 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class BonsaiBlock extends Block {
+public class BonsaiBlock extends Block implements ISlabAwareBlock {
 
     // ← ここにプロパティを宣言
+    public static final BooleanProperty ON_SLAB = BooleanProperty.of("on_slab");
     public static final BooleanProperty EMPTY = BooleanProperty.of("empty");
     public static final EnumProperty<SaplingType> SAPLING = EnumProperty.of("sapling", SaplingType.class);
 
@@ -26,20 +29,31 @@ public class BonsaiBlock extends Block {
     public BonsaiBlock(AbstractBlock.Settings settings) {
         super(settings);
 
-        // デフォルト状態を EMPTY=true に設定
+        // デフォルト状態を設定
         this.setDefaultState(this.getStateManager().getDefaultState()
                 .with(EMPTY, true)
-                //.with(SAPLING, SaplingType.CHERRY) // デフォルトはとりあえず CHERRY
+                .with(ON_SLAB, false)
+                .with(SAPLING, SaplingType.CHERRY) // デフォルト値
         );
     }
 
-
+    // プロパティを追加(まとめて登録)
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
-        // BlockState に EMPTY を登録
-        builder.add(EMPTY, SAPLING);
+        // BlockState に EMPTY SAPLING ON_SLABを登録
+        builder.add(EMPTY, SAPLING, ON_SLAB);
     }
 
+    // 配置時の向きをプレイヤーに合わせる
+    @Override
+    public BlockState getPlacementState(ItemPlacementContext ctx) {
+        BlockPos pos = ctx.getBlockPos();
+        BlockState below = ctx.getWorld().getBlockState(pos.down());
+        BlockState state = getDefaultState();
+
+        // ヘルパークラスにまとめたメソッドを呼ぶ
+        return handlePlacement(state, below, ON_SLAB); // ISlabAwareBlock ヘルパーで ON_SLAB をセット
+    }
 
     // onUse メソッドをオーバーライドして、右クリック処理を記述します。
     @Override
@@ -55,9 +69,16 @@ public class BonsaiBlock extends Block {
         // EMPTY が true の場合 → 植える
         if (state.get(EMPTY)) {
 
-            // 手に苗木がなければ何もしない
             SaplingType sapling = SaplingType.fromItem(stack.getItem());
+
+            // 手に苗木がなければ何もしない
             if (sapling == null) return ActionResult.PASS;
+
+            world.setBlockState(pos, state.with(EMPTY, false).with(SAPLING, sapling));
+
+            if (!player.isCreative()) {
+                stack.decrement(1); // 苗木を1個消費
+            }
 
             // 種類ごとに置き換えるブロックを決める
             switch (sapling) {
@@ -66,33 +87,27 @@ public class BonsaiBlock extends Block {
                 }
             }
 
-            if (!player.isCreative()) {
-                stack.decrement(1); // 苗木を1個消費
-            }
-
         }
         // EMPTY が true 以外の場合 → 何か植わってたら取り出せる
         else {
-
             // ここで植えられた苗木の種類を取得する
             SaplingType planted = state.get(SAPLING);
 
-            // アイテムとしてプレイヤーに返す
-            ItemStack dropStack = ItemStack.EMPTY;
-
             // 植わってる種類に応じて返す苗木を決める
-            switch (planted) {
-                case CHERRY -> dropStack = new ItemStack(Items.CHERRY_SAPLING);
-                case SPRUCE -> dropStack = new ItemStack(Items.SPRUCE_SAPLING);
-            }
+            ItemStack dropStack = switch (planted) {
+                case CHERRY -> new ItemStack(Items.CHERRY_SAPLING);
+                case SPRUCE -> new ItemStack(Items.SPRUCE_SAPLING);
+            };
 
             if (!player.getInventory().insertStack(dropStack)) {
                 player.dropItem(dropStack, false);
             }
 
             // ここでブロックを元に戻す
-            world.setBlockState(pos, this.getDefaultState().with(EMPTY, true));
-
+            BlockState below = world.getBlockState(pos.down());
+            BlockState newState = handlePlacement(getDefaultState(), below, ON_SLAB)
+                    .with(EMPTY, true);
+            world.setBlockState(pos, newState);
 
         }
 
