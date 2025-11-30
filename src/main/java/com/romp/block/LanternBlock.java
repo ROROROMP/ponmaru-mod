@@ -1,6 +1,5 @@
 package com.romp.block;
 
-import com.romp.PonmaruMod;
 import com.romp.api.IFacing;
 import com.romp.api.ISlabAwareBlock;
 import com.romp.util.Facing;
