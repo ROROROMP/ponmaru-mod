@@ -21,7 +21,7 @@ public class ModBlocks {
 
     // ブロックを追加
     public static final Block OAK_LANTERN = register("oak_lantern",
-            settings -> new Block(settings
+            settings -> new LanternBlock(settings
                     .strength(0.5f)
                     .luminance(state -> 10)
                     .nonOpaque()),

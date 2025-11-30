@@ -1,0 +1,6 @@
+{
+  "parent": "ponmaru_mod:block/bonsai_pot2",
+  "textures": {
+    "sapling": "ponmaru_mod:block/sakura"
+  }
+}

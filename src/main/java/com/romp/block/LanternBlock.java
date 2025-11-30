@@ -2,23 +2,20 @@ package com.romp.block;
 
 import com.romp.PonmaruMod;
 import com.romp.api.IFacing;
+import com.romp.api.ISlabAwareBlock;
 import com.romp.util.Facing;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.enums.SlabType;
 import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 
-
 // ランタンのブロックとしてまとめる
 // implements IFacing → 「向きを持つブロック」であることを宣言
 // IFacing を implements することで getFacing() と setFacing() を必ず実装する必要がある
-public class LanternBlock extends Block implements IFacing {
-
+public class LanternBlock extends Block implements IFacing, ISlabAwareBlock {
 
     public static final BooleanProperty ON_SLAB = BooleanProperty.of("on_slab");
 
@@ -56,19 +53,11 @@ public class LanternBlock extends Block implements IFacing {
     public BlockState getPlacementState(ItemPlacementContext ctx) {
         BlockPos pos = ctx.getBlockPos();
         BlockState below = ctx.getWorld().getBlockState(pos.down());
-
-        boolean isBottomSlab =
-                below.getBlock() instanceof SlabBlock &&
-                        below.get(SlabBlock.TYPE) == SlabType.BOTTOM;
-
-        // ブロックの種類を判別できるか、ログで確認
-        PonmaruMod.LOGGER.info("LanternBlockでの下のブロック確認" + isBottomSlab);
-
-        // ① まず向きだけ付けたブロックステートを作る
         BlockState state = Facing.withPlacementFacing(getDefaultState(), ctx);
 
-        // ② その state に対して ON_SLAB を付けて返す
-        return state.with(ON_SLAB, isBottomSlab);
+        // ヘルパークラスにまとめたメソッドを呼ぶ
+        return handlePlacement(state, below, ON_SLAB); // ISlabAwareBlock ヘルパーで ON_SLAB をセット
     }
+
 
 }
