@@ -1,7 +1,10 @@
-package com.romp.block;
+package com.romp.registry;
 
 import com.romp.PonmaruMod;
 
+import com.romp.block.BonsaiBlock;
+import com.romp.block.LanternBlock;
+import com.romp.block.ZaisuBlock;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;

@@ -1,6 +1,7 @@
-package com.romp.item;
+package com.romp.registry;
 
 import com.romp.PonmaruMod;
+import com.romp.item.ModFoodComponents;
 import net.minecraft.item.*;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
