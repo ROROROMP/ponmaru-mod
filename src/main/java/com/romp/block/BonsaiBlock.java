@@ -52,7 +52,8 @@ public class BonsaiBlock extends Block implements ISlabAwareBlock {
         BlockState state = getDefaultState();
 
         // ヘルパークラスにまとめたメソッドを呼ぶ
-        return handlePlacement(state, below, ON_SLAB); // ISlabAwareBlock ヘルパーで ON_SLAB をセット
+        //return handlePlacement(state, below, ON_SLAB); // ISlabAwareBlock ヘルパーで ON_SLAB をセット
+        return null;
     }
 
     // onUse メソッドをオーバーライドして、右クリック処理を記述します。
@@ -104,10 +105,10 @@ public class BonsaiBlock extends Block implements ISlabAwareBlock {
             }
 
             // ここでブロックを元に戻す
-            BlockState below = world.getBlockState(pos.down());
-            BlockState newState = handlePlacement(getDefaultState(), below, ON_SLAB)
-                    .with(EMPTY, true);
-            world.setBlockState(pos, newState);
+//            BlockState below = world.getBlockState(pos.down());
+//            BlockState newState = handlePlacement(getDefaultState(), below, ON_SLAB)
+//                    .with(EMPTY, true);
+//            world.setBlockState(pos, newState);
 
         }
 
