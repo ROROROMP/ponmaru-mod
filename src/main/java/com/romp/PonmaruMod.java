@@ -1,8 +1,8 @@
 package com.romp;
 
-import com.romp.block.ModBlocks;
-import com.romp.item.ModItemGroups;
-import com.romp.item.ModItems;
+import com.romp.registry.ModBlocks;
+import com.romp.registry.ModItemGroups;
+import com.romp.registry.ModItems;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
