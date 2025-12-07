@@ -13,16 +13,16 @@ public class Facing {
 
     // ブロックの向きを表すプロパティを定数としてまとめる（FACINGはブロックの向きを表す EnumProperty 定数）
     public static final EnumProperty<Direction> FACING = Properties.FACING;
-
-    // ブロックの向きをNORTHに初期化する
-    public static BlockState withDefaultFacing(BlockState state) {
-        return state.with(Properties.FACING, Direction.NORTH);
-    }
-
-    // このブロックは向きを持つ ということをブロックの状態として追加する
-    public static void addFacingProperty(StateManager.Builder<Block, BlockState> builder) {
-        builder.add(Properties.FACING);
-    }
+//
+//    // ブロックの向きをNORTHに初期化する
+//    public static BlockState withDefaultFacing(BlockState state) {
+//        return state.with(Properties.FACING, Direction.NORTH);
+//    }
+//
+//    // このブロックは向きを持つ ということをブロックの状態として追加する
+//    public static void addFacingProperty(StateManager.Builder<Block, BlockState> builder) {
+//        builder.add(Properties.FACING);
+//    }
 
     // 配置時にプレイヤーの向きを反映するメソッド
     // ItemPlacementContext にはプレイヤーの向き情報が入っている
