@@ -39,14 +39,12 @@ public class LanternBlock extends Block implements IFacing, ISlabAwareBlock {
         state = state.with(ON_SLAB, onSlab);
 
         // 動いているかコンソールに出して確認
-        System.out.println("ランタンブロックチェック: FACING = " + state.get(FACING));
-        System.out.println("ランタンブロックチェック: ON_SLAB  = " + onSlab);
+        // System.out.println("ランタンブロックチェック: FACING = " + state.get(FACING));
+        // System.out.println("ランタンブロックチェック: ON_SLAB  = " + onSlab);
 
         return state;
         
     }
-    
-    
 
 
 }

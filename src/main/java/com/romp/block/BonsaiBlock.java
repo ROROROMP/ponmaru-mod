@@ -18,6 +18,7 @@ import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
+
 public class BonsaiBlock extends Block implements ISlabAwareBlock {
 
     // ← ここにプロパティを宣言
@@ -51,9 +52,11 @@ public class BonsaiBlock extends Block implements ISlabAwareBlock {
         BlockState below = ctx.getWorld().getBlockState(pos.down());
         BlockState state = getDefaultState();
 
-        // ヘルパークラスにまとめたメソッドを呼ぶ
-        //return handlePlacement(state, below, ON_SLAB); // ISlabAwareBlock ヘルパーで ON_SLAB をセット
-        return null;
+        // ON_SLAB の反映
+        boolean onSlab = isOnBottomSlab(below);
+        state = state.with(ON_SLAB, onSlab);
+
+        return state;
     }
 
     // onUse メソッドをオーバーライドして、右クリック処理を記述します。
@@ -105,10 +108,13 @@ public class BonsaiBlock extends Block implements ISlabAwareBlock {
             }
 
             // ここでブロックを元に戻す
-//            BlockState below = world.getBlockState(pos.down());
-//            BlockState newState = handlePlacement(getDefaultState(), below, ON_SLAB)
-//                    .with(EMPTY, true);
-//            world.setBlockState(pos, newState);
+            BlockState below = world.getBlockState(pos.down());
+            // ON_SLAB の反映
+            boolean onSlab = isOnBottomSlab(below);
+
+            BlockState newState = state.with(ON_SLAB, onSlab)
+                    .with(EMPTY, true);
+            world.setBlockState(pos, newState);
 
         }
 
