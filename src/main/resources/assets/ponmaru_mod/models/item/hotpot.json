@@ -1,0 +1,6 @@
+{
+  "parent": "ponmaru_mod:block/hotpot",
+  "textures": {
+    "layer0": "ponmaru_mod:block/hotpot"
+  }
+}

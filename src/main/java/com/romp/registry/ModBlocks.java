@@ -49,6 +49,11 @@ public class ModBlocks {
             AbstractBlock.Settings.create(), true
     );
 
+    public static final Block HOTPOT = register("hotpot",
+            settings -> new Block(settings.strength(1.0f).nonOpaque()),
+            AbstractBlock.Settings.create(), true
+    );
+
 
     // Blockオブジェクトを返す register メソッド
     private static Block register(String name, Function<AbstractBlock.Settings, Block> blockFactory, AbstractBlock.Settings settings, boolean shouldRegisterItem) {
